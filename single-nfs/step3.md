@@ -4,8 +4,7 @@ Using neadm CLI configure NFS service by setting up cluster region namespace, se
 neadm cluster create region1; \
 neadm tenant create region1/tenant1; \
 neadm bucket create region1/tenant1/bk1; \
-neadm service create nfs nfssvc; \
-neadm nfs share nfssvc region1/tenant1/bk1
+neadm service create nfs nfssvc
 `{{execute}}
 
 At this point service is ready to be attached to one or more Edge node by using "add" command and specifying server id (can be found in "neadm system status" output)
@@ -18,7 +17,13 @@ neadm system status
 neadm service add nfssvc REPLACE_WITH_SERVER_ID
 `{{copy}}
 
-Now that service associated with the right server id, restart service to apply new changes
+Now that service associated with the right server id, share tenant's bucket
+
+`
+neadm nfs share nfssvc region1/tenant1/bk1
+`{{execute}}
+
+and restart service to apply new changes
 
 `
 neadm service restart nfssvc; \

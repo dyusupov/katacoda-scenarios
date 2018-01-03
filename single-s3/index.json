@@ -1,13 +1,26 @@
 {
-  "title": "Hello World Scenario",
-  "description": "Your First Scenario",
+  "title": "Configuring NexentaEdge S3 Cluster",
+  "description": "Quick steps to get Edge S3 service up and running in K8s environment",
   "difficulty": "beginner",
-  "time": "2 minutes",
+  "time": "10 minutes",
   "details": {
     "steps": [{
-      "title": "Step 1 - Run Command",
+      "title": "Start NexentaEdge data node container",
       "text": "step1.md"
-    }],
+    },
+    {
+      "title": "Initialize single node cluster",
+      "text": "step2.md"
+    },
+    {
+      "title": "Configure simple Edge-X S3 service",
+      "text": "step3.md"
+    },
+    {
+      "title": "Try it out",
+      "text": "step4.md"
+    }
+    ],
     "intro": {
       "text": "intro.md",
       "credits": ""
@@ -18,7 +31,7 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nProceed with the steps..\u001b[m\r\n"
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n\r\nSingle node Kubernetes is ready to try NexentaEdge!\u001b[m\r\n"
   },
   "backend": {
     "imageid": "kubeadm"

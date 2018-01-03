@@ -1,3 +1,5 @@
+![logo](https://nexenta.com/rs/nexenta2/images/Nexenta-GL-logo-600-dpi.jpg)
+
 In this tutorial we going to setup and configure NexentaEdge S3 compatible service.
 
 NexentaEdge Extended S3 API provides unique benefits which can be useful for Machine Deep Learning, Big Data and IoT frameworks:

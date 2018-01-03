@@ -1,28 +1,16 @@
-Cluster can be managed via CLI or GUI. In this tutorial we will explain how to use CLI to get cluster initialized.
-Utility is pre-packaged into nexenta/nedge image and now available. For easy access, setup an alias
+NexentaEdge is designed to be "shared-nothing" scale-out SDS solution where data storage containers spread out across physical server nodes connected via Ethernet network (we call it Replicast/UDP backend network).
+In this first step we will setup first host node as Edge data node with a location where to keep data blobs:
 
 `
-alias neadm="docker exec -it s3data neadm"
+mkdir /var/tmp/data
 `{{execute}}
 
-Verify that service is running (it might take few minutes for service to appear)
+In real deployments the above location ideally has to point to previously prepared mount point using ext4, xfs or zfs filesystems. More complex configuration allows usage of direct raw disk interface as well.
+
+Now that we setup data blobs location, start nexenta/nedge daemon and Edge-X S3 compatible service
 
 `
-neadm system status
+docker run --name s3data -v /etc/localtime:/etc/localtime:ro -v /var/tmp/data:/data -d nexenta/nedge start -j ccowserv -j ccowgws3
 `{{execute}}
 
-At this point you will see single node shows up in the status output. If desired you can add more nodes to the cluster.
-Now, initialize cluster site installation. You will need to read (press enter to scroll), accept EULA and type "yes" at the end.
-As a result cluster will be initialized with new GUID (Globally Unique ID).
-
-`
-neadm system init
-`{{execute}}
-
-Now that cluster initialized, setup DevOps license. We assume that you already have ACTIVATION_KEY token available and ready to be used.
-
-Use e-mailed ACTIVATION_KEY to activate installation
-
-`
-neadm system license set online ACTIVATION_KEY
-`{{copy}}
+It will take few minutes for docker image to download. Please be patient..

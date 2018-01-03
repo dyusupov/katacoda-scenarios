@@ -4,13 +4,7 @@ Using neadm CLI configure iSCSI service by setting up cluster region namespace, 
 neadm cluster create region1; \
 neadm tenant create region1/tenant1; \
 neadm bucket create region1/tenant1/bk1; \
-neadm service create iscsi iscsisvc; \
-`{{execute}}
-
-Create 8gb LUN with 128K chunk size and replication count 1
-
-`
-neadm iscsi create iscsisvc region1/tenant1/LUN1 8G -s 128K -r 2
+neadm service create iscsi iscsisvc
 `{{execute}}
 
 At this point service is ready to be attached to one or more Edge node by using "add" command and specifying server id (can be found in "neadm system status" output)
@@ -23,14 +17,20 @@ neadm system status
 neadm service add iscsisvc REPLACE_WITH_SERVER_ID
 `{{copy}}
 
-Now that service associated with the right server id, restart service to apply new changes
+Now that service associated with the right server id we should restart it to apply new changes
 
 `
 neadm service restart iscsisvc; \
 neadm service show iscsisvc
 `{{execute}}
 
-Verify that service is running
+We can now add LUNs to it. Create 8gb LUN with 128K chunk size and replication count 1
+
+`
+neadm iscsi create iscsisvc region1/tenant1/bk1/LUN1 8G -s 128K -r 1
+`{{execute}}
+
+Verify that service is running and LUN is available
 
 `
 neadm iscsi status iscsisvc

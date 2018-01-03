@@ -20,7 +20,7 @@ neadm service add nfssvc REPLACE_WITH_SERVER_ID
 Now that service associated with the right server id, share tenant's bucket
 
 `
-neadm nfs share nfssvc region1/tenant1/bk1
+neadm service serve nfssvc region1/tenant1/bk1
 `{{execute}}
 
 and restart service to apply new changes

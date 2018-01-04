@@ -19,7 +19,7 @@ mkdir /tmp/a; \
 mount -t nfs 172.18.0.2:/bk1 /tmp/a
 `{{execute}}
 
-Copy few files
+Copy few files to it
 
 `
 cp /var/log/*.log /tmp/a/

@@ -1,4 +1,4 @@
-Using neadm CLI configure NFS service by setting up cluster region namespace, service name, and share tenant's bucket
+Using neadm CLI configure NFS service by setting up cluster region namespace, service name, and tenant's bucket
 
 `
 neadm cluster create region1; \
@@ -17,17 +17,17 @@ neadm system status
 neadm service add nfssvc REPLACE_WITH_SERVER_ID
 `{{copy}}
 
-Now that service associated with the right server id, share tenant's bucket
-
-`
-neadm service serve nfssvc region1/tenant1/bk1
-`{{execute}}
-
-and restart service to apply new changes
+Now that service associated with the right server id, restart service to apply new changes
 
 `
 neadm service restart nfssvc; \
 neadm service show nfssvc
+`{{execute}}
+
+NFS server is up and running at this point, lets add new export to it
+
+`
+neadm service serve nfssvc region1/tenant1/bk1
 `{{execute}}
 
 By default service will be listening on NFS ports on all Docker container interfaces.

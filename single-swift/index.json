@@ -1,0 +1,39 @@
+{
+  "title": "Configuring NexentaEdge OpenStack/SWIFT Cluster",
+  "description": "Quick steps to get Edge SWIFT Object service up and running in K8s environment",
+  "difficulty": "beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [{
+      "title": "Start NexentaEdge data node container",
+      "text": "step1.md"
+    },
+    {
+      "title": "Initialize single node cluster",
+      "text": "step2.md"
+    },
+    {
+      "title": "Configure simple Edge SWIFT Object service",
+      "text": "step3.md"
+    },
+    {
+      "title": "Try it out",
+      "text": "step4.md"
+    }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n\r\nSingle node Kubernetes cluster is ready to try NexentaEdge!\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubeadm"
+  }
+}

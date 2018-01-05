@@ -1,2 +1,2 @@
-# Katacoda NexentaEdge Single S3 service 
+# Katacoda NexentaEdge Single iSCSI service 
 This is Katacoda connected scenario directory

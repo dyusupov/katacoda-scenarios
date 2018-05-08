@@ -19,8 +19,8 @@ As a result cluster will be initialized with new GUID (Globally Unique ID).
 neadm system init
 `{{execute}}
 
+OPTIONAL:
 Now that cluster initialized, setup DevOps license. We assume that you already have ACTIVATION_KEY token available and ready to be used.
-
 Use e-mailed ACTIVATION_KEY to activate installation
 
 `

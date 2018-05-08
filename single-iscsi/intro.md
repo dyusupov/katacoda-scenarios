@@ -19,8 +19,6 @@ Use cases details:
 * Management API for Snapshots and Clones, including Bucket instantaneous snapshots
 * Transparent iSCSI to/from S3 bucket access
 
-Prior to installation please ensure that you have ACTIVATION_KEY token available.
-
-If not yet register DevOps account, obtain license key here: https://community.nexenta.com/s/devops-edition
+OPTIONAL: Prior to installation please ensure that you have ACTIVATION_KEY token available. If not yet register DevOps account, obtain license key here: https://community.nexenta.com/s/devops-edition
 
 Give Edge-X S3 a try in easy to run 3 step procedure!
